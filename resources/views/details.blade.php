@@ -48,7 +48,7 @@
     </nav>
              
     <!--end navbar-->
-    <div class="container-fluid" style="height: 500px;background-image: url('images/bg.jpg'); background-repeat: no-repeat;background-size:cover;">
+    <div class="container-fluid" style="height: 500px;background-image: url('assets/images/bg.jpg'); background-repeat: no-repeat;background-size:cover;">
 
     </div>
 
@@ -60,7 +60,7 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="images/comdetail.png" class="img-fluid rounded-start" alt="...">
+                        <img src="assets/images/comdetail.png" class="img-fluid rounded-start" alt="...">
                         <p class="card-text"><small class="text-muted"> يمن سوفت</small></p>
 
                         <p class="card-text">
@@ -157,7 +157,7 @@
                         <div class="shadow-sm p-3 mb-5 bg-body rounded">
                         <div class="row">
                             <div class="col-3">
-                                <img src="images/rel1.png">
+                                <img src="assets/images/rel1.png">
                             </div>
                             <div class="col-7">
                                 <p class="h5">مدير تسويق</p>
@@ -174,7 +174,7 @@
                         <div class="shadow-sm p-3 mb-5 bg-body rounded">
                         <div class="row">
                             <div class="col-3">
-                                <img src="images/rel2.png">
+                                <img src="assets/images/rel2.png">
                             </div>
                             <div class="col-7">
                                 <p class="h5">مدير تسويق</p>
@@ -190,7 +190,7 @@
                         <div class="shadow-sm p-3 mb-5 bg-body rounded">
                         <div class="row">
                             <div class="col-3">
-                                <img src="images/rel3.png">
+                                <img src="assets/images/rel3.png">
                             </div>
                             <div class="col-7">
                                 <p class="h5">مدير تسويق</p>

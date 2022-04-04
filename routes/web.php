@@ -18,6 +18,14 @@ use App\Http\Controllers\Userinterface;
 //     return view('welcome');
 // });
 Route::get('/',[Userinterface::class,'showIndex']);
+Route::get('/details',[Userinterface::class,'showDetails']);
+Route::get('/about',[Userinterface::class,'showAbout']);
+Route::get('/contact',[Userinterface::class,'showContact']);
+Route::get('/jobs',[Userinterface::class,'showJobs']);
+Route::get('/profile',[Userinterface::class,'showProfile']);
+
+
+
 
 // Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
 
