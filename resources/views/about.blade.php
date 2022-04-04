@@ -121,7 +121,7 @@
     </div>
   
      <!--end modul sing up-->
-     <div class="container-fluid" style="height: 500px;background-image: url('images/bg.jpg'); background-repeat: no-repeat;background-size:cover;">
+     <div class="container-fluid" style="height: 500px;background-image: url('assets/images/bg.jpg'); background-repeat: no-repeat;background-size:cover;">
 
     </div>
 
@@ -181,7 +181,7 @@
        
      </div>
 
-     <div class="container-fluid mt-4" style="color:rgb(65, 63, 63);background-image: url('images/aboutnumber.jpg'); height: 300px;">
+     <div class="container-fluid mt-4" style="color:rgb(65, 63, 63);background-image: url('assets/images/aboutnumber.jpg'); height: 300px;">
         <div class="row my-auto align-items-center" style="    height: 300px;">
             <div class="col-12 col-lg-3 my-auto">
                 <p class="h2">325</p>

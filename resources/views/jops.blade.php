@@ -166,7 +166,7 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-3">
-                    <img src="images/jops1.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="assets/images/jops1.jpg" class="img-fluid rounded-start" alt="...">
                     <p class="card-text text-center"><small class="text-muted"> شركة اجودا</small></p>
                     
                   </div>
@@ -215,7 +215,7 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-3">
-                    <img src="images/jops2.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="assets/images/jops2.jpg" class="img-fluid rounded-start" alt="...">
                     <p class="card-text text-center"><small class="text-muted"> شركة اجودا</small></p>
                     
                   </div>
@@ -264,7 +264,7 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-3">
-                    <img src="images/jops2.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="assets/images/jops2.jpg" class="img-fluid rounded-start" alt="...">
                     <p class="card-text text-center"><small class="text-muted"> شركة اجودا</small></p>
                     
                   </div>
@@ -312,7 +312,7 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-3">
-                    <img src="images/jops1.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="assets/images/jops1.jpg" class="img-fluid rounded-start" alt="...">
                     <p class="card-text text-center"><small class="text-muted"> شركة اجودا</small></p>
                     
                   </div>
@@ -366,7 +366,7 @@
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
         <div class="row">
             <div class="col-3">
-               <a href="details.html"><img src="images/rel1.png"></a> 
+               <a href="details.html"><img src="assets/images/rel1.png"></a> 
             </div>
             <div class="col-7">
                 <p class="h5 name-job">مدير تسويق</p>
@@ -385,7 +385,7 @@
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
         <div class="row">
             <div class="col-3">
-              <a href="details.html"> <img src="images/rel2.png"></a> 
+              <a href="details.html"> <img src="assets/images/rel2.png"></a> 
             </div>
             <div class="col-7">
                 <p class="h5 name-job">مبرمج </p>
@@ -402,7 +402,7 @@
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
         <div class="row">
             <div class="col-3">
-              <a href="details.html"><img src="images/rel3.png"></a> 
+              <a href="details.html"><img src="assets/images/rel3.png"></a> 
             </div>
             <div class="col-7">
                 <p class="h5 name-job">  مبرمج</p>
