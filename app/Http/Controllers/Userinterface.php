@@ -18,7 +18,7 @@ class Userinterface extends Controller
 
     public function showJobs()
     {
-        return view('jobs');
+        return view('jops');
     }
 
     public function showContact()
