@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Userinterface;
 
+use App\Http\Controllers\admin;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,8 @@ Route::get('/about',[Userinterface::class,'showAbout']);
 Route::get('/contact',[Userinterface::class,'showContact']);
 Route::get('/jobs',[Userinterface::class,'showJobs']);
 Route::get('/profile',[Userinterface::class,'showProfile']);
+Route::get('/admin',[admin::class,'showadmin']);
+
 
 
 
