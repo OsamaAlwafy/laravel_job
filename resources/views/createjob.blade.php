@@ -21,28 +21,38 @@
 
 
   <h5 class="card-header">Enter job Details</h5>
-  <form class="card-body  border-0" action="/save_author" method="POST" id="dropzone-basic" enctype="multipart/form-data">
-
+  <form class="card-body  border-0" action="{{ route('addJob') }}"  method="POST" id="dropzone-basic" enctype="multipart/form-data">
+  @csrf
     <div class="row g-3">
       <div class="col-md-6 mb-1">
         <label class="form-label" for="multicol-username">job Name</label>
-        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        <input name="name_job" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        @error('name_job')
+              <span class="alert alert-danger">{{ $message }}</span>
+          @enderror
       </div>
 
       <div class="col-md-6 mb-4">
                   <label for="select2Basic" class="form-label">Company</label>
-                  <select id="select2Basic" name="publisher_id" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Alaska</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="CA">California</option>
-                    <option value="NV">Nevada</option>
-                    <option value="OR">Oregon</option>
-                    <option value="WA">Washington</option>
+                  <select id="select2Basic" name="company_job" class="select2 form-select form-select-lg" data-allow-clear="true">
+                    <option value="1">Alaska</option>
+                    <option value="2">Hawaii</option>
+                    <option value="3">California</option>
+                    <option value="4">Nevada</option>
+                    <option value="5">Oregon</option>
+                    <option value="6">Washington</option>
                   </select>
+
+                  @error('company_job')
+              <span class="alert alert-danger">{{ $message }}</span>
+          @enderror
                 </div>
       <div class="col-md-6 mb-1">
         <label class="form-label" for="multicol-username">job Type</label>
-        <input name="type" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        <input name="type_job" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        @error('type_job')
+              <span class="alert alert-danger">{{ $message }}</span>
+          @enderror
       </div>
 
 
@@ -57,7 +67,11 @@
 
       <div class="col-md-6 mb-1">
                   <label for="price" class=" col-form-label">Salary</label>
-                  <input class="form-control" id="quantity" name="quantity" type="number" value="18" />
+                  <input class="form-control" id="quantity" name="salary_job" type="number" value="18" />
+                  @error('salary_job')
+              <span class="alert alert-danger">{{ $message }}</span>
+          @enderror
+
                 </div>
 
 
@@ -66,8 +80,10 @@
         <div class="col-md-12">
 
           <label class="form-label" for="bootstrap-maxlength-example2">Job Description</label>
-          <textarea id="bootstrap-maxlength-example2" name="desc" class="form-control bootstrap-maxlength-example" rows="3" maxlength="255"></textarea>
-
+          <textarea id="bootstrap-maxlength-example2" name="desc_job" class="form-control bootstrap-maxlength-example" rows="3" maxlength="255"></textarea>
+          @error('desc_job')
+              <span class="alert alert-danger">{{ $message }}</span>
+          @enderror
         </div>
 
 

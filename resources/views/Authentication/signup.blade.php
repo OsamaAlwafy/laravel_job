@@ -168,7 +168,7 @@
                 
             @endif
 
-          <form id="formAuthentication" class="mb-3" action="{{ route('do_login') }}" method="POST" enctype="multipart/form-data">
+          <form id="formAuthentication" class="mb-3" action="{{ route('do_signup') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="email" class="form-label"> Username</label>
