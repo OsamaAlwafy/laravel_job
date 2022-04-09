@@ -14,7 +14,7 @@ class skill extends Controller
   }
   public function showSkill()
   {
-      
+      return view('userProfile.skill');      
 
   }
   public function editSkill()

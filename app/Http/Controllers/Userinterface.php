@@ -13,7 +13,7 @@ class Userinterface extends Controller
 
     public function showProfile()
     {
-        return view('profile');
+        return view('userProfile.profile');
     }
 
     public function showJobs()

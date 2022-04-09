@@ -16,7 +16,7 @@
      <div class="container-fluid">
         <div class="row">
 
-              <div  class="col-12 col-md-3 navbar navbar-expand-sm bg-dark navbar-dark text-center " style="background-color: #1d1d35;">
+              <div  class="col-12 col-md-3 navbar navbar-expand-sm bg-dark navbar-dark text-center d-block " style="background-color: #1d1d35;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,27 +38,28 @@
                           <a class="nav-link disabled" >تسجيل الدخول</a>
                         </li>
                         <li class="nav-item ">
-                         <button  style="background-color:#1d1d35; color:white" class="p-2 active border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" role="tab" aria-controls="nav-home" aria-selected="true">البيانات الشخصية</button>
+                         <a  style="background-color:#1d1d35; color:white" href="{{ url('/dataPerson') }}" class=" active border-0 mb-1"  role="tab" aria-controls="nav-home" aria-selected="true">البيانات الشخصية</a>
                         </li>
 
                         <li class="nav-item">
-                          <button  style="background-color:#1d1d35; color:white" class="p-2 border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-skill" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> المهارات</button>
+                        <a  style="background-color:#1d1d35; color:white" href="{{ url('/skill') }}" class=" active border-0 m-1"  role="tab" aria-controls="nav-home" aria-selected="true"> المهارات</a>
                         </li>
                         <li class="nav-item">
-                          <button  style="background-color:#1d1d35; color:white" class="p-2 border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-exprience" type="button" role="tab" aria-controls="nav-home" aria-selected="true">الخبرات </button>
-                        </li>
-
-                        <li class="nav-item">
-                          <button   style="background-color:#1d1d35; color:white" class="p-2 border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-previous-work" type="button" role="tab" aria-controls="nav-home" aria-selected="true">الاعمال السابقة</button>
+                        <a  style="background-color:#1d1d35; color:white" href="{{ url('/pre_work') }}" class="active border-0 m-1"  role="tab" aria-controls="nav-home" aria-selected="true"> الاعمال السابقة</a>
                         </li>
 
                         <li class="nav-item">
-                         <button  style="background-color:#1d1d35; color:white" class="p-2 border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-qualifications" type="button" role="tab" aria-controls="nav-home" aria-selected="true">  الموهلات والدورات</button>
+                        <a  style="background-color:#1d1d35; color:white" href="{{ url('/qualifications') }}" class=" active border-0 m-1"  role="tab" aria-controls="nav-home" aria-selected="true"> الموهلات والدورات</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a  style="background-color:#1d1d35; color:white" href="{{ url('/experience') }}" class="active border-0 m-1"  role="tab" aria-controls="nav-home" aria-selected="true"> الخبرة</a>
+                  
                         </li>
 
                        
                         <li class="nav-item">
-                          <button  style="background-color:#1d1d35; color:white" class="p-2 border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-qualifications" type="button" role="tab" aria-controls="nav-home" aria-selected="true">تسجيل الخروج</button>
+                          <button  style="background-color:#1d1d35; color:white" class="border-0 m-1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-qualifications" type="button" role="tab" aria-controls="nav-home" aria-selected="true">تسجيل الخروج</button>
                         </li>
 
                       </ul>
@@ -79,22 +80,17 @@
 
               
                 <div class="tab-content col-12 mx-auto m-1" >
-                    <div class="tab-pane col-12 col-md-7  mx-auto show active" id="nav-profile"  role="tabpanel" aria-labelledby="nav-home-tab">
 
                          
 
-                        <div class="container">
+                      <div class="container">
                           
                             <div class="row">
-                              <!--
-                                <div class="col-12">
-                                    <img src="assets/images/perprofile.jpg" class="img-fluid rounded mx-auto d-block" alt="">
-                                </div>
-                              -->
+                            
                             </div>
 
                         
-                        <div class="col-12">
+                        <!-- <div class="col-12">
 
                             <form onsubmit=" false">
                                 <div class="mb-3 mt-3">
@@ -117,11 +113,14 @@
                               
 
 
-                        </div>
+                        </div> -->
+                        @yield('content');
                           
 
                     </div><!--end the container the data personal-->
                     </div>
+                    </div>
+           
                    
                     
                     
@@ -930,7 +929,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper    https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/profile.js"></script>
+    <script src="assets/js/profile.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

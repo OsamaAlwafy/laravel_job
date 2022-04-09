@@ -10,4 +10,10 @@ class admin extends Controller
     {
         return view('createjob');
     }
+
+    
+    public function createCompany(){
+        return view('createCampany');
+
+    }
 }

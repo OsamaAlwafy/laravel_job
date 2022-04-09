@@ -5,11 +5,11 @@ namespace App\Http\Controllers\userProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class qualification extends Controller
+class userData extends Controller
 {
     //
-    public function showqualification()
+    public function showData()
     {
-        return view('userProfile.qualifications');   
+        return view('userProfile.dataPersonal');
     }
 }

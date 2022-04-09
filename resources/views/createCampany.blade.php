@@ -20,55 +20,55 @@
 
 
 
-  <h5 class="card-header">Enter job Details</h5>
+  <h5 class="card-header">Enter Company Details</h5>
   <form class="card-body  border-0" action="/save_author" method="POST" id="dropzone-basic" enctype="multipart/form-data">
 
     <div class="row g-3">
       <div class="col-md-6 mb-1">
-        <label class="form-label" for="multicol-username">job Name</label>
+        <label class="form-label" for="multicol-username">company  Name</label>
         <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
-
-      <div class="col-md-6 mb-4">
-                  <label for="select2Basic" class="form-label">Company</label>
-                  <select id="select2Basic" name="publisher_id" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Alaska</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="CA">California</option>
-                    <option value="NV">Nevada</option>
-                    <option value="OR">Oregon</option>
-                    <option value="WA">Washington</option>
-                  </select>
-                </div>
       <div class="col-md-6 mb-1">
-        <label class="form-label" for="multicol-username">job Type</label>
+        <label class="form-label" for="multicol-username">Location </label>
         <input name="type" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
-
-
-
-
-
-
-
-
-
-
-
-      <div class="col-md-6 mb-1">
-                  <label for="price" class=" col-form-label">Salary</label>
-                  <input class="form-control" id="quantity" name="quantity" type="number" value="18" />
-                </div>
-
-
-
       
-        <div class="col-md-12">
 
-          <label class="form-label" for="bootstrap-maxlength-example2">Job Description</label>
-          <textarea id="bootstrap-maxlength-example2" name="desc" class="form-control bootstrap-maxlength-example" rows="3" maxlength="255"></textarea>
+      <div class="col-12">
 
-        </div>
+<div class="card mb-4">
+
+  <div id="imageupload" class="card-body">
+    <label class="form-label" for="">Catigory Image</label>
+
+    <div id="load-img" class="label-img">
+      <label for="file" class=" ">
+        Drop files here or click to upload
+      </label>
+      </br>
+      <label for="img">
+        (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+      </label>
+      <input id="img" class="d-none" name="img" type="file" />
+    </div>
+
+  </div>
+  <!-- </div> -->
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
