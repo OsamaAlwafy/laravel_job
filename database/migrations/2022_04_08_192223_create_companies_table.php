@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('city');
             $table->string('type');
+            
            
 
             $table->timestamps();

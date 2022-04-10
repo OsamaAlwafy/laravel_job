@@ -44,7 +44,7 @@ Route::get('/experience',[experience::class,'showExperience']);
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::get('/sign_up',[AuthController::class,'signup'])->name('sign_up');
 Route::post('/do_login',[AuthController::class,'dologin'])->name('do_login');
-Route::post('/do_signup',[AuthController::class,'dosignup'])->name('dosign_up');
+Route::post('/do_signup',[AuthController::class,'dosignup'])->name('do_signup');
 
 
 

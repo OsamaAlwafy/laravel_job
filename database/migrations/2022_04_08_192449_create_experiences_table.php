@@ -18,9 +18,13 @@ return new class extends Migration
             $table->datetime('time');
             $table->string('name');
             $table->string('campany_name');
+          
             $table->string('campany_Address');
 
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+           
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

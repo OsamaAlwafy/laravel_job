@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('password');
-            $table->string('email');
+           
             $table->string('cv');
             $table->string('image');
 
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
         });
     }
 

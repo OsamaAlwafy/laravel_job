@@ -15,10 +15,17 @@ return new class extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-
-
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('job_id');
             $table->timestamps();
+           
+            $table->foreign('job_id')->references('id')->on('jobs');
+           
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+
+           
         });
     }
 
