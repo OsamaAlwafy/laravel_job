@@ -69,7 +69,7 @@
               <span class="alert alert-danger">{{ $message }}</span>
           @enderror
             </div>
-            <input type='hidden' name='role' vlaue='admin'>
+            <input type='hidden' name='role' value='admin'>
 
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>

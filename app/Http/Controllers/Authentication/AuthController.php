@@ -90,11 +90,14 @@ class AuthController extends Controller
        
         if($u->save()){
             $u->attachRole($request->role);
+            echo $request->role;
+            if($request->role=='admin')
+            return redirect()->route('admin');
+            return redirect()->route('profile');
 
             
            
-            return redirect()->route($this->checkRole())
-            ->with(['success'=>'user created successful']);
+           
         }
 
       
