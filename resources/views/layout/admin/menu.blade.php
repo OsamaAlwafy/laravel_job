@@ -176,17 +176,17 @@
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="Catigory">Catigory</div>
+            <div data-i18n="الوظيفة">JOBS</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="/new_catigory" class="menu-link">
-                    <div data-i18n="Add Catigory">Add Catigory </div>
+                <a href="{{ route('admin') }}" class="menu-link">
+                    <div data-i18n="انشاء وظيفة">انشاء وظيفة</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="/show_catigory" class="menu-link">
-                    <div data-i18n="Show Catigory">Show Catigory</div>
+                <a href="{{ route('register') }}"  class="menu-link">
+                    <div data-i18n="عرض الوظائف">عرض الوظائف</div>
                 </a>
             </li>
 
@@ -198,17 +198,17 @@
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="City">City</div>
+            <div data-i18n=" الشركات " >الشركات</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="/new_city" class="menu-link">
-                    <div data-i18n="Add City">Add City </div>
+                <a href= "{{ route('creat_company') }}" class="menu-link">
+                    <div data-i18n="اضافة شركة">        </div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/show_city" class="menu-link">
-                    <div data-i18n="Show  City">Show City</div>
+                    <div data-i18n="  عرض الشركات">Show City</div>
                 </a>
             </li>
 
@@ -219,19 +219,19 @@
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-layout"></i>
-            <div data-i18n="Author">Author</div>
+            <div data-i18n="الادمن">Author</div>
         </a>
 
         <ul class="menu-sub">
 
             <li class="menu-item">
-                <a href="/new_author" class="menu-link">
-                    <div data-i18n="Add Author">Add Author</div>
+                <a href= "{{ route('create_admin') }}" class="menu-link">
+                    <div data-i18n=" اضافة ادمن ">Add Author</div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/show_author" class="menu-link">
-                    <div data-i18n="Show Author">Show Author</div>
+                    <div data-i18n="عرض الادمن">Show Author</div>
                 </a>
             </li>
 

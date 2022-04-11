@@ -15,6 +15,12 @@ class admin extends Controller
         return view('createjob');
     }
 
+    public function  creat_admin()
+    {
+        return view('admin.create_admin');
+
+    }
+
     public function addJob(Request $request){
         Validator::validate($request->all(),[
             'name_job'=>['required','min:3','max:40'],
