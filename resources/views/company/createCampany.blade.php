@@ -17,12 +17,23 @@
 
 
 
+@if(session()->has('message')){
+            <p class="alert alert-danger">{{ session()->get('message') }}</p>
+          }
+          @endif
+          @if ($errors->any())
+            @foreach ($errors->all() as $err)
+            <p class="alert alert-danger">{{ $err }}</p>
+                
+            @endforeach
+                
+            @endif
 
 
 
   <h5 class="card-header">Enter Company Details</h5>
-  <form class="card-body  border-0" action="/save_author" method="POST" id="dropzone-basic" enctype="multipart/form-data">
-
+  <form class="card-body  border-0"  action="{{ route('store_company') }}" method="POST" id="dropzone-basic" enctype="multipart/form-data">
+  @csrf
     <div class="row g-3">
       <div class="col-md-6 mb-1">
         <label class="form-label" for="multicol-username">company  Name</label>
@@ -30,6 +41,16 @@
       </div>
       <div class="col-md-6 mb-1">
         <label class="form-label" for="multicol-username">Location </label>
+        <input name="location" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+      </div>
+
+      <div class="row g-3">
+      <div class="col-md-6 mb-1">
+        <label class="form-label" for="multicol-username">City</label>
+        <input name="city" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+      </div>
+      <div class="col-md-6 mb-1">
+        <label class="form-label" for="multicol-username">type </label>
         <input name="type" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
       

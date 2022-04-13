@@ -6,17 +6,26 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\company;
+use Illuminate\Support\Facades\DB;
 use App\Models\job\job;
 use App\Models\job\job_detail;
 class admin extends Controller
 {
     public function showadmin()
     {
-        return view('createjob');
+
+        $company =DB::table('companies')
+        ->select('*')
+        ->get();
+        //return response($company);
+         return view('createjob')->with('company',$company);
     }
 
     public function  creat_admin()
     {
+        
+
         return view('admin.create_admin');
 
     }
@@ -50,8 +59,5 @@ class admin extends Controller
     }
 
     
-    public function createCompany(){
-        return view('createCampany');
-
-    }
+    
 }

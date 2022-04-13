@@ -33,12 +33,16 @@
       </div>
 
       <div class="col-md-6 mb-4">
+
                   <label for="select2Basic" class="form-label">Company</label>
                   <select id="select2Basic" name="company_job" class="select2 form-select form-select-lg" data-allow-clear="true">
-                  @foreach ($company as $com)
-                    <option value="{{$com->id}}">{{$com->name}}</option>
-                    @endforeach
+                  
+               @foreach ($company as $comp)
+                   
+                    <option value="{{$comp->id}}">{{$comp->name}}</option>
+              @endforeach
                   </select>
+
 
                   @error('company_job')
               <span class="alert alert-danger">{{ $message }}</span>
@@ -84,25 +88,6 @@
         </div>
 
 
-        <div class="col-md-12">
-
-<label class="form-label" for="bootstrap-maxlength-example2">Work responsibilities</label>
-<textarea id="bootstrap-maxlength-example2" name="W_responsible" class="form-control bootstrap-maxlength-example" rows="3" maxlength="255"></textarea>
-
-  
-
-</div>
-
-<div class="col-md-12">
-
-<label class="form-label" for="bootstrap-maxlength-example2">Why work with us</label>
-<textarea id="bootstrap-maxlength-example2" name="why_w_us" class="form-control bootstrap-maxlength-example" rows="3" maxlength="255"></textarea>
-
-  
-
-</div>
-
-
 
 
 
@@ -141,18 +126,7 @@
 
 
 
-      <div class="col-md-6">
-              <div class="row">
-                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-country">is active</label>
-                <div class="col-sm-9">
-                  <select  name="is_active" id="formtabs-country" class="select2 form-select" data-allow-clear="true">
-                    
-                    <option value="1">مفعل</option>
-                    <option value="-1">معطل</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+
 
       <div class="pt-4">
         <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>

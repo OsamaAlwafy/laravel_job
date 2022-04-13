@@ -46,12 +46,12 @@
 </svg>
 
 </span>
-              <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+              <span class="app-brand-text demo text-body fw-bolder">Create Admin! 👋</span>
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2">sadd Welcome to Sneat! 👋</h4>
-          <p class="mb-4">Please sign-in to your account and start the adventure</p>
+          
+          
             @if ($errors->any())
             @foreach ($errors->all() as $err)
             <p class="alert alert-danger">{{ $err }}</p>
@@ -93,9 +93,15 @@
                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               </div>
             </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Confirm Password</label>
+                </a>
+              </div>
+              </div>
 
             <div class="mb-3 input-group input-group-merge">
-              <label for="email" class="form-label">Confirm Password</label>
+              
               <input type="password" class="form-control" id="email" name="confirm_pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" autofocus>
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               @error('confirm_pass')

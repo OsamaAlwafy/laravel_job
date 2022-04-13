@@ -26,17 +26,7 @@
 
 
 
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
 
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
 <!-- beautify ignore:start -->
 <html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-semi-dark" data-assets-path="../../assets/" data-template="vertical-menu-template-semi-dark">
 
@@ -154,11 +144,11 @@
 </svg>
 
 </span>
-              <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+              <span class="app-brand-text demo text-body fw-bolder">Sign up 👋</span>
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2">sadd Welcome to Sneat! 👋</h4>
+          <h4 class="mb-2"> </h4>
           <p class="mb-4">Please sign-in to your account and start the adventure</p>
             @if ($errors->any())
             @foreach ($errors->all() as $err)
@@ -202,8 +192,16 @@
               </div>
             </div>
 
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Confirm Password</label>
+                </a>
+              </div>
+              </div>
+
+
             <div class="mb-3 input-group input-group-merge">
-              <label for="email" class="form-label">Confirm Password</label>
+             
               <input type="password" class="form-control" id="email" name="confirm_pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" autofocus>
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               @error('confirm_pass')

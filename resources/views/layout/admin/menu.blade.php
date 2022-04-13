@@ -159,7 +159,7 @@
             </svg>
 
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2">Dashboard </span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -185,7 +185,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('register') }}"  class="menu-link">
+                <a href="{{ route('list_Job') }}"  class="menu-link">
                     <div data-i18n="عرض الوظائف">عرض الوظائف</div>
                 </a>
             </li>
@@ -207,7 +207,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="/show_city" class="menu-link">
+                <a href= "{{ route('list_company') }}" class="menu-link">
                     <div data-i18n="  عرض الشركات">Show City</div>
                 </a>
             </li>
@@ -238,134 +238,7 @@
         </ul>
     </li>
 
-    <!-- Apps & Pages -->
-    <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Apps &amp; Pages</span>
-    </li>
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-food-menu'></i>
-            <div data-i18n="Payments">Payments</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_payment" class="menu-link">
-                    <div data-i18n="Add Payments">Add Payments</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showPayments" class="menu-link">
-                    <div data-i18n="show Payments">Show Payments</div>
-                </a>
-            </li>
-
-        </ul>
-    </li>
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-user"></i>
-            <div data-i18n="Books">Books</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_book" class="menu-link">
-                    <div data-i18n="Add Book">Add Book</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/show_book" class="menu-link">
-                    <div data-i18n="Show Book">Show Book</div>
-                </a>
-
-            </li>
-        </ul>
-    </li>
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Publisher">Publisher</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_publisher" class="menu-link">
-                    <div data-i18n="Add Publisher"> Add Publisher </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showPublisher" class="menu-link">
-                    <div data-i18n="Show Publisher">Show Publisher</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Offer">Offer</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_offer" class="menu-link">
-                    <div data-i18n="Add Offer"> Add Offer </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showOffer" class="menu-link">
-                    <div data-i18n="Show Offer">Show Offer</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="User">User</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/showUser" class="menu-link">
-                    <div data-i18n="Show User"> Show User </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showAdmin" class="menu-link">
-                    <div data-i18n="Show Admin">Show Admin</div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="/new_admin" class="menu-link">
-                    <div data-i18n="Add Admin">Add Admin</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Order">Order</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/show_order" class="menu-link">
-                    <div data-i18n="Show Order "> Show Order </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showDetailsOrder" class="menu-link">
-                    <div data-i18n="Show Details Order">Show Details Order</div>
-                </a>
-            </li>
-
-           
-        </ul>
-    </li>
+  
 
 
 
