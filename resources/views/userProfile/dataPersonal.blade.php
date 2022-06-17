@@ -1,5 +1,5 @@
 
-@extends('userProfile.profile')
+@extends('layout.userProfile.menu')
 @section('content')
                         
                         <div class="col-12">

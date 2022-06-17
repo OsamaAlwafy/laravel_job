@@ -16,9 +16,12 @@ return new class extends Migration
         Schema::create('previous_works', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->string('descripe');
-            $table->string('link')->nullable();
-            
+            $table->string('name');
+
+            $table->date('date');
+            $table->string('describe');
+            $table->string('project_url')->nullable();
+            $table->tinyInteger('is_active')->default(1);
 
             $table->timestamps();
             $table->unsignedBigInteger('user_id');

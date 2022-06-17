@@ -15,16 +15,20 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            
             $table->string('name');
-            $table->unsignedBigInteger('job_details_id');
-            $table->foreign('job_details_id')->references('id')->on('job_details');
+            $table->tinyInteger('is_complete')->default(0);// هل الوظيفة قد تم ارتبط فية شخص او لا
+            $table->tinyInteger('is_active')->default(1);// هل نظهر هذه الوظيفو او لا 
+
+          
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
+
+            $table->timestamps();
             
            
             
-            $table->string('type');
+           
 
         });
     }

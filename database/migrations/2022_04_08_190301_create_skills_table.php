@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('rate');
+            $table->tinyInteger('is_active')->default(1);
+
+
+            
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
            

@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->datetime('time');
             $table->string('name');
+            $table->string('describe');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('campany_name');
-          
-            $table->string('campany_Address');
+            $table->string('campany_url');
+            $table->tinyInteger('is_active')->default(1);
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
+           
            
             $table->foreign('user_id')->references('id')->on('users');
         });

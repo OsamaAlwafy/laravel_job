@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('qualifications', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->datetime('date');
-            
-            $table->timestamps();
+            $table->string('describe');
+            $table->date('date');
+            $table->tinyInteger('is_active')->default(1);
             $table->unsignedBigInteger('user_id');
+            $table->timestamps();
+           
            
             $table->foreign('user_id')->references('id')->on('users');
 

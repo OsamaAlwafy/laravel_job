@@ -61,21 +61,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome.css" />
-    <link rel="stylesheet" href="assets/vendor/fonts/flag-icons.css" />
+    <!-- Icons --> 
+    <link rel="stylesheet" href= {{ asset("assets/vendor/fonts/boxicons.css") }} />
+     <link rel="stylesheet" href={{ asset('"assets/vendor/fonts/fontawesome.css"') }} />
+    <link rel="stylesheet" href={{ asset("assets/vendor/fonts/flag-icons.css") }} />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/vendor/css/rtl/theme-semi-dark.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href= {{ asset("assets/vendor/css/rtl/core.css" ) }} class="template-customizer-core-css" />
+    <link rel="stylesheet" href= {{ asset("assets/vendor/css/rtl/theme-semi-dark.css") }} class="template-customizer-theme-css" />
+    <link rel="stylesheet" href= {{ asset("assets/css/demo.css") }} />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href= {{ asset("assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css") }} />
+    <link rel="stylesheet" href= {{ asset("assets/vendor/libs/typeahead-js/typeahead.css") }} />
+    <link rel="stylesheet" href= {{ asset("assets/vendor/libs/apex-charts/apex-charts.css" ) }}/>
+    <link rel="stylesheet" href= {{ asset("assets/css/custom.css") }} />
 
     <!-- Page CSS -->
     
@@ -159,7 +159,7 @@
             </svg>
 
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2">Dashboard </span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -185,7 +185,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('register') }}"  class="menu-link">
+                <a href="{{ route('showJob') }}"  class="menu-link">
                     <div data-i18n="عرض الوظائف">عرض الوظائف</div>
                 </a>
             </li>
@@ -207,7 +207,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="/show_city" class="menu-link">
+                <a href={{ route('show_company') }} class="menu-link">
                     <div data-i18n="  عرض الشركات">Show City</div>
                 </a>
             </li>
@@ -238,134 +238,7 @@
         </ul>
     </li>
 
-    <!-- Apps & Pages -->
-    <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Apps &amp; Pages</span>
-    </li>
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-food-menu'></i>
-            <div data-i18n="Payments">Payments</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_payment" class="menu-link">
-                    <div data-i18n="Add Payments">Add Payments</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showPayments" class="menu-link">
-                    <div data-i18n="show Payments">Show Payments</div>
-                </a>
-            </li>
-
-        </ul>
-    </li>
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-user"></i>
-            <div data-i18n="Books">Books</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_book" class="menu-link">
-                    <div data-i18n="Add Book">Add Book</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/show_book" class="menu-link">
-                    <div data-i18n="Show Book">Show Book</div>
-                </a>
-
-            </li>
-        </ul>
-    </li>
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Publisher">Publisher</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_publisher" class="menu-link">
-                    <div data-i18n="Add Publisher"> Add Publisher </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showPublisher" class="menu-link">
-                    <div data-i18n="Show Publisher">Show Publisher</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Offer">Offer</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/new_offer" class="menu-link">
-                    <div data-i18n="Add Offer"> Add Offer </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showOffer" class="menu-link">
-                    <div data-i18n="Show Offer">Show Offer</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="User">User</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/showUser" class="menu-link">
-                    <div data-i18n="Show User"> Show User </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showAdmin" class="menu-link">
-                    <div data-i18n="Show Admin">Show Admin</div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="/new_admin" class="menu-link">
-                    <div data-i18n="Add Admin">Add Admin</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class='menu-icon tf-icons bx bx-check-shield'></i>
-            <div data-i18n="Order">Order</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="/show_order" class="menu-link">
-                    <div data-i18n="Show Order "> Show Order </div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/showDetailsOrder" class="menu-link">
-                    <div data-i18n="Show Details Order">Show Details Order</div>
-                </a>
-            </li>
-
-           
-        </ul>
-    </li>
+  
 
 
 
@@ -858,6 +731,11 @@
        @yield('content')   
        </div> 
        </div> 
+     {{-- <div class="footer">
+       
+    @yield("footer");
+    </div>   --}}
+    @include('layout/admin/footer');
 
 
 <!-- All Modals -->
@@ -867,31 +745,11 @@
 
 <!-- Add New Credit Card Modal -->
  <!-- Footer -->
- <footer class="content-footer footer bg-footer-theme">
-            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-              <div class="mb-2 mb-md-0">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>
-                , made with ❤️ by <a href="https://themeselection.com/" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-              </div>
-              <div>
-
-                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="footer-link me-4">Documentation</a>
-
-
-                <a href="https://themeselection.com/support/" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
-
-              </div>
-            </div>
-          </footer>
+ 
           <!-- / Footer -->
 
 
-          <div class="content-backdrop fade"></div>
+          {{-- <div class="content-backdrop fade"></div>
         </div>
         <!-- Content wrapper -->
       </div>
@@ -908,7 +766,7 @@
     <div class="drag-target"></div>
 
   </div>
-  <!-- / Layout wrapper -->
+  <!-- / Layout wrapper --> --}}
 
 
 
@@ -938,6 +796,7 @@
   <!-- Page JS -->
   <script src="assets/js/dashboards-crm.js"></script>
   <script src="assets/js/custom.js"></script>
+  
 </body>
 
 

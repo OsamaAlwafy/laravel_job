@@ -17,15 +17,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('job_id');
-            $table->timestamps();
-           
+            $table->tinyInteger('is_active')->default(1);
+            
+
             $table->foreign('job_id')->references('id')->on('jobs');
-           
             $table->foreign('user_id')->references('id')->on('users');
 
-
-
-           
+            $table->timestamps();
         });
     }
 

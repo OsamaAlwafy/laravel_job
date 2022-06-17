@@ -10,6 +10,15 @@ class userData extends Controller
     //
     public function showData()
     {
-        return view('userProfile.dataPersonal');
+        return view('userProfile.projectUser');
+    }
+    public function showCv()
+    {
+        return view("userProfile.profile_user");
+    }
+
+    public function showDataConnection()
+    {
+        return view('userProfile.projectUser');
     }
 }

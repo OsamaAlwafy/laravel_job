@@ -2,35 +2,29 @@
 @extends('layout.admin.menu')
 @section('content')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h5 class="card-header">Enter Company Details</h5>
-  <form class="card-body  border-0" action="/save_author" method="POST" id="dropzone-basic" enctype="multipart/form-data">
-
+  <h5 class="card-header">ادخل تفاصيل الشركة</h5>
+  <form class="card-body  border-0" action={{route("storeCompany")}} method="POST" id="dropzone-basic" enctype="multipart/form-data">
+   @csrf
     <div class="row g-3">
-      <div class="col-md-6 mb-1">
-        <label class="form-label" for="multicol-username">company  Name</label>
+      <div class="col-md-4 mb-1">
+        <label class="form-label" for="multicol-username">اسم الشركة</label>
         <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
+      <div class="col-md-4 mb-1">
+        <label class="form-label" for="multicol-username">موقع الشركة  </label>
+        <input name="location" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+      </div>
+      <div class="col-md-4 mb-1">
+        <label class="form-label" for="multicol-username">  المدينة التي تقع فيها الشركة  </label>
+        <input name="city" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+      </div>
       <div class="col-md-6 mb-1">
-        <label class="form-label" for="multicol-username">Location </label>
+        <label class="form-label" for="multicol-username"> المجال الوظيفي التي تقدمة الشركة  </label>
         <input name="type" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+      </div>
+      <div class="col-md-6 mb-1">
+        <label class="form-label" for="multicol-username"> رابط الشركة  </label>
+        <input name="url" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
       
 
@@ -39,7 +33,7 @@
 <div class="card mb-4">
 
   <div id="imageupload" class="card-body">
-    <label class="form-label" for="">Catigory Image</label>
+    <label class="form-label" for="">ادخل اللوجو الشركة</label>
 
     <div id="load-img" class="label-img">
       <label for="file" class=" ">
@@ -49,7 +43,7 @@
       <label for="img">
         (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
       </label>
-      <input id="img" class="d-none" name="img" type="file" />
+      <input id="img" class="d-none" name="logo" type="file" />
     </div>
 
   </div>

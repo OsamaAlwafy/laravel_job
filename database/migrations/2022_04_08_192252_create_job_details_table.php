@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('Job_title');
             $table->string('salary');
             $table->string('branch');
+            $table->string('time_type');// نوع الدوام جزئي او دوام كامل
+            $table->string('skill'); // المهارات المطلوبة لهذه الوظيفة
+            $table->string('duration_experience');// الخبرة المطلوبة 
+
+
+
             $table->string('descripe');
             $table->string('W_responsible');
             $table->string('why_w_us');
