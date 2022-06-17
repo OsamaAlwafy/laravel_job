@@ -10,4 +10,29 @@ class Userinterface extends Controller
     {
         return view('index');
     }
+
+    public function showProfile()
+    {
+        return view('userProfile.profile');
+    }
+
+    public function showJobs()
+    {
+        return view('jops');
+    }
+
+    public function showContact()
+    {
+        return view('contact');
+    }
+
+    public function showAbout()
+    {
+        return view('about');
+    }
+
+    public function showDetails()
+    {
+        return view('details');
+    }
 }
