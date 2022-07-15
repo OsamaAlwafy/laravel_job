@@ -70,11 +70,23 @@
 </div>
 </div>
 <!-- Modal to add new record -->
-<div class=" offcanvas-end fade  modal m-auto " style="background-color: #fcfdfd ;right:50% " tabindex="-1"  id="qualification">
-<div class="offcanvas-header modal-dialog   border-bottom">
-  <h5 class="offcanvas-title" id="exampleModalLabel">اضافة مشروع جديد</h5>
-  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="modal fade " id="qualification" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+    <div class="modal-content p-3 p-md-5">
+      <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        {{-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
+        <div class="text-center mb-4">
+     
+         
+          <h3> اضافة مشروع  جديد </h3>
+         
+        
+          
+        </div>
+
 </div>
+
 <div class="offcanvas-body flex-grow-1">
   <form class="add-new-record pt-0 row g-2" method="POST" action="{{route('store_pre_work')}}" id="form-add-new-record" >
    @csrf
@@ -118,5 +130,7 @@
 
 </div>
 </div>
+    </div>
+  </div>
 
   @endsection

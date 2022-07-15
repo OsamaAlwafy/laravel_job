@@ -3,7 +3,7 @@
 
 <div class="card-header flex-column flex-md-row">
   <div class="head-label text-center">
-    <h5 class="card-title mb-0">قائمة المهارات</h5>
+    <h5 class="card-title mb-0">قائمة الوظائف</h5>
   </div>
   <div class="dt-action-buttons text-end pt-3 pt-md-0">
     <div class="dt-buttons">
@@ -13,7 +13,10 @@
          </i> <span class="d-none d-sm-inline-block">اضافة وظيفة جديدة جديد</span></span>
         </button>
        </div></div></div>
-       @foreach ( $jobs->jobs as $job )
+       @if ($jobs)
+         
+      
+       @forelse ( $jobs->jobs as $job )
      
      
 <div class="card">
@@ -70,36 +73,49 @@
     </tbody>
   </table>
 <div  id="collapseOne{{$job->id}}"  class="accordion-collapse ms-3 collapse  hide">
-   
+    
+      
+    
     <table class="datatables-basic table border-top">
       <thead>
         <tr>
           
           <th>id</th>
           <th>اسم</th>
-          <th>الايميل</th>
+          <th>CV</th>
+          <th>تعين</th>
 
         </tr>
       </thead>
       
  <tbody>
-   @foreach ($job->user as $user )
+   @forelse ($job->user as $user )
    <tr>
    <td>  {{$user->id}}  </td>
    <td>  {{$user->name}}  </td>
-   <td>  {{$user->email}}  </td>
+   <td>   <a href="{{route('show_cv',['id'=>$user->id])}}"><button type="button" class="btn btn-outline-success btn-sm">عرض CV</button> </a> </td>
+   <td> <a href="{{route('complete_accept_user',['job_id'=>$job->id,"user_id"=>$user->id])}}"><button type="button" class="btn btn-outline-success btn-sm">قيول</button> </a>  </td>
   </tr>
-   @endforeach
-  <tr> 
-    
+  @empty
+  <tr>
+  <div class="alert alert-danger" role="alert">
+   لا يوجد متقدمين على الوظيفة حتى الان
+  </div>
   </tr>
+   @endforelse 
+  
   </tbody>
  </table>
   </div>
   
 </div>
 </div>
-@endforeach
+@empty
+<div class="alert alert-danger" role="alert">
+  لا يوجد وظائف قمت بنشرها في الموقع
+</div>
+@endforelse
+@endif
 <!-- Modal to add new record -->
 <div class="modal fade" id="create-job" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-simple modal-edit-user">
@@ -109,7 +125,7 @@
         <div class="text-center mb-4">
         
           <h3>اضافة وظيفة جديدة</h3>
-    
+            
          
           
         
@@ -117,10 +133,17 @@
         </div>
         <form id="editUserForm" class="row g-3" method="POST" action="{{route('store_job_company')}}">
           @csrf
-          <input type="hidden" name="company_id" value="3">
+         
           <div class="col-12 col-md-6">
-            <label class="form-label" for="modalEditUserFirstName">اسم الوظيفة </label>
-          <input type="text" name="name" id="modalEditUserFirstName"  class="form-control" placeholder="John" />
+            <label class="form-label" for="modalEditUserFirstName">صنف الوظيفة </label>
+            <select class="form-select" name="tag" aria-label="Default select example">
+              @foreach ( $tags as $tag )
+                
+              
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
+              @endforeach
+              
+            </select>
           </div>
           <div class="col-12 col-md-6">
             <label class="form-label" for="modalEditUserLastName">نوع الوظيفة </label>

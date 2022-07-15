@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
+
 use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
+  
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -49,4 +52,28 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(job::class);
     }
+    ///////////////////////***show user cv */
+
+    public function skill()
+    {
+       return $this->hasMany(skill::class);
+    }
+    public function qualification()
+    {
+       return $this->hasMany(qualification::class);
+    }
+    public function previous_work()
+    {
+       return $this->hasMany(previous_work::class);
+    }
+    public function experience()
+    {
+       return $this->hasMany(experience::class);
+    }
+    public function company()
+    {
+       return $this->hasMany(company::class);
+    }
+
+    /////////////////////***end user cv */
 }

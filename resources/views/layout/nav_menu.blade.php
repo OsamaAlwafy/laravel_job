@@ -52,10 +52,10 @@
             </li>
           
             <li class="nav-item position-lg-absolute">
-              <a class="nav-link active ms-2 " style=" color: white; font-weight: bold;" aria-current="page" href="/profile">تسجيل الدخول</a>
+            <a class="nav-link active ms-2 " style=" color: white; font-weight: bold;" aria-current="page" href="{{route('login')}}">تسجيل الدخول</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" style="color: white; font-weight: bold;" aria-current="page" href="/profile"> انشاء حساب</a>
+              <a class="nav-link active" style="color: white; font-weight: bold;" aria-current="page" href="{{route('register')}}"> انشاء حساب</a>
             </li>
            
             

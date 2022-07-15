@@ -4,6 +4,7 @@ namespace App\Http\Controllers\userProfile;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\previous_work as modelPrevious_work;
 use Illuminate\Support\Facades\DB;
 
@@ -24,15 +25,15 @@ class previous_work extends Controller
      
 
 
-      $PreWork->user_id=1;
+      $PreWork->user_id=Auth::id();
      // $PreWork->user_id=Auth::user()->id;
   
       $PreWork->save();
       return back();
     }
     public function showPreWork()
-  {
-    $PreWorks=DB::table('previous_works')->get();
+  { $id=Auth::id();
+    $PreWorks=DB::table('previous_works')->where("user_id",$id)->get();
       return view('userProfile.projectUser')->with("previous_works",$PreWorks);      
 
   }

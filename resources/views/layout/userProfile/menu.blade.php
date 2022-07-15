@@ -180,13 +180,18 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('admin') }}" class="menu-link">
-                    <div data-i18n="الامان"> </div>
+                <a href="{{ route('dashboard_user') }}" class="menu-link">
+                    <div data-i18n="معلومات غنك"> </div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('showJob') }}"  class="menu-link">
-                    <div data-i18n="  معلومات الاتصال"> </div>
+              <a href="{{ route('admin') }}" class="menu-link">
+                  <div data-i18n="الامان"> </div>
+              </a>
+          </li>
+            <li class="menu-item">
+                <a href="{{ route('connection_data_user') }}"  class="menu-link">
+                    <div data-i18n="  معلومات الاتصال"> </div> 
                 </a>
             </li>
 
@@ -225,36 +230,23 @@
 </li>
 
 <li class="menu-item">
-  <a href="{{route('show_cv')}}" class="menu-link ">
+  <a href="{{route('show_cv',['id'=>1])}}" class="menu-link ">
       <i class="menu-icon tf-icons bx bx-home-circle"></i>
       <div data-i18n="  عرض السيفي " > </div>
+  </a>
+
+</li>
+<li class="menu-item">
+  <a href="{{route('show_job_applied')}}" class="menu-link ">
+      <i class="menu-icon tf-icons bx bx-home-circle"></i>
+      <div data-i18n="  الوظائف المقدم اليها " > </div>
   </a>
 
 </li>
     
 
     <!-- Author -->
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link ">
-            <i class="menu-icon tf-icons bx bx-layout"></i>
-            <div data-i18n="الادمن">Author</div>
-        </a>
-
-        <ul class="menu-sub">
-
-            <li class="menu-item">
-                <a href= "{{ route('create_admin') }}" class="menu-link">
-                    <div data-i18n=" اضافة ادمن ">Add Author</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="/show_author" class="menu-link">
-                    <div data-i18n="عرض الادمن">Show Author</div>
-                </a>
-            </li>
-
-        </ul>
-    </li>
+   
 
   
 
@@ -741,7 +733,7 @@
       
 
       <!-- Content wrapper -->
-      <div class="content-wrapper">
+      <div class="content-wrapper" >
 
 <!-- Content -->
         <div class="card mb-4 ">

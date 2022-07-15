@@ -28,6 +28,11 @@ class RoleUser
             'display_name' => 'العملاء', // optional
             //'description' => 'User is the owner of a given project', // optional
         ]);
+        Role::create([
+            'name' => 'company',
+            'display_name' => 'العملاء', // optional
+            //'description' => 'User is the owner of a given project', // optional
+        ]);
 
     }
 }

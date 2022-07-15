@@ -14,20 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-            $table->string('name_com');
-            $table->string('logo');
-            $table->string('location');
-            $table->string('url');
-            $table->string('city');
-            $table->string('country');
-
-            $table->string('phone');
-            $table->string('email');
-
-
+           
+          
+          
+            
+           
+          
+            $table->string('location')->nullable();
+            $table->string('url')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->primary('user_id');
+           
             $table->tinyInteger('is_active')->default(0);
-            $table->string('type');
+            $table->string('type')->nullable();
             
            
 

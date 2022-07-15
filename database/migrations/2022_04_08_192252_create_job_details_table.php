@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('Job_title');
             $table->string('salary');
             $table->string('branch');
-            $table->string('time_type');// نوع الدوام جزئي او دوام كامل
+            $table->tinyInteger('time_type');// نوع الدوام جزئي او دوام كامل
+            $table->tinyInteger('freelancer');// هل الوظيفة freelancer
             $table->string('skill'); // المهارات المطلوبة لهذه الوظيفة
             $table->string('duration_experience');// الخبرة المطلوبة 
 

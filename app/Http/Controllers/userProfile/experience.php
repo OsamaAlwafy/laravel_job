@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\experience as modelExperience;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class experience extends Controller
@@ -22,7 +23,7 @@ class experience extends Controller
       $qualification->campany_url=$request->campany_url;
 
 
-      $qualification->user_id=1;
+      $qualification->user_id=Auth::id();
      // $Experience->user_id=Auth::user()->id;
   
       $qualification->save();
@@ -30,8 +31,9 @@ class experience extends Controller
     }
 
     public function showExperience()
-  {
-    $experiences=DB::table('experiences')->get();
+  { $id=Auth::id();
+    $experiences=DB::table('experiences')->where("user_id",$id)->get();
+   
       return view('userProfile.experienceUser')->with("experiences",$experiences);      
   }
   public function editExperience($id)

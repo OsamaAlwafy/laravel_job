@@ -3,29 +3,44 @@
 @section('content')
 
   <div class="container mt-4 px-4 py-4">
-      <div class="row">
-          <div class="col-12 col-md-4">
+    <form action="{{route('fullter-jobs')}}" method="get">
+       <div class="row">
+          <div class="col-6 col-lg-3 col-md-4 mb-2">
            
-            <input type="email" class="form-control" id="input-search" placeholder="ابحث عن الوظيفة">
+            <input type="text" name="name" class="form-control" id="input-search" placeholder="ابحث عن اسم الوظيفة">
 
           </div><!--end column-->
-
-          <div class="col-12 col-md-4">
+          <div class="col-6 col-lg-3 col-md-4 mb-2">
            
-            <input class="form-control" list="datalistOptions" id="city-select" disabled placeholder="اختار المدينة">
-            <datalist id="datalistOptions">
-              <option value="تعز"> </option>
-              <option value="صنعاء"> </option>
-              <option value="حضرموت"> </option>
-              <option value="عدن"></option>
+            <input type="text" name="city" class="form-control" id="input-search" placeholder="ابحث عن المدينة">
+
+          </div><!--end column-->
+          <div class="col-6 col-lg-2 col-md-4 mb-2">
+           
+            <select class="form-select" aria-label="Default select example">
+              <option selected value=""> نوع الدوام</option>
+              <option value="1">كامل</option>
+              <option value="2">جزئي</option>
              
-            </datalist>
-
+            </select>
           </div><!--end column-->
-          <div class="col-12 col-md-4">
+
+          <div class="col-6  col-lg-2 col-md-4 mb-2">
+           
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              عن بعد
+            </label>
+          </div><!--end column-->
+         
+
+         
+
+       
+          <div class="col-12 col-lg-2 col-md-4 d-grid gap-2  ">
            
                 
-                <button class=" btn btn-primary" id="serach-btn" type="button">بحث</button>
+                <button class=" btn btn-outline-primary" id="serach-btn" type="submit">بحث</button>
               
           </div>  
         
@@ -34,11 +49,12 @@
 
 
 
-      </div> <!--end row-->
+       </div> <!--end row-->
+    </form>  
   </div> <!--end container search-->
 
   <!--start search advance-->
-  <div class="container mt-3">
+  {{-- <div class="container mt-3">
       <div class="row">
           <div class="col-4 col-md-2">
             <div class="btn-group"  style="width: 100%; display: inline-block;"  role="group">
@@ -53,16 +69,7 @@
 
               
           </div> <!--end column -->
-          <div class="col-4 col-md-2 "> 
-          <div class="btn-group"  style="width: 100%; display: inline-block;"  role="group">
-            <button id="btnGroupDrop1" style="width: 100%; display: inline-block;" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              الموقع
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-              <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-            </ul>
-          </div>
+          
         </div> <!--end column -->
 
         <div class="col-4 col-md-2"> 
@@ -77,17 +84,7 @@
             </div>
           </div> <!--end column -->
 
-          <div class="col-4 col-md-2"> 
-            <div class="btn-group "  style="width: 100%; display: inline-block;"  role="group">
-              <button id="btnGroupDrop1"  style="width: 100%; display: inline-block;" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                الراتب
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-              </ul>
-            </div>
-          </div> <!--end column -->
+         
 
           <div class="col-4 col-md-2"> 
             <div class="btn-group"  style="width: 100%; display: inline-block;"  role="group">
@@ -101,20 +98,10 @@
             </div>
           </div> <!--end column -->
 
-          <div class="col-4 col-md-2"> 
-            <div class="btn-group"  style="width: 100%; display: inline-block;"  role="group">
-              <button id="btnGroupDrop1"  style="width: 100%; display: inline-block;" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                الخبره
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-              </ul>
-            </div>
-          </div> <!--end column -->
+     
 
       </div> <!--end row--> 
-  </div> <!--end container advanced search-->
+  </div> <!--end container advanced search--> --}}
  <!--
   <div class="container mt-3 "> 
       <div class="row align-items-center ">
@@ -319,26 +306,35 @@
 <div class="container" id="all-job">
   <div class="row mt-4">
     <p class="h4 text-center"> وظائف ذات صلة</p>
+    @forelse ($jobs as $job )
+     
+        
+     
+    
     <div class="col-12 parent">
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
         <div class="row">
             <div class="col-3">
-               <a href="/details"><img src="assets/images/rel1.png"></a> 
+            <a href="{{route('details_job',['id'=>$job->id])}}"><img src="assets/images/rel1.png"></a> 
             </div>
-            <div class="col-7">
-                <p class="h5 name-job">مدير تسويق</p>
-                <p class="text-muted"><span class="name-city">صنعاء</span>
-                  <span class="name-company" ></span> شركة اليمن السعيد
+            <div class="col-6">
+                <p class="h5 name-job">{{$job->name}} </p>
+                <p class="text-muted"><span class="name-city">{{$job->company->user->city}}</span>
+                  <span class="name-company" ></span> {{$job->company->user->name}}
                 </p>
             </div>
-            <div class="col-2">
-                <p class="py-2 mt-3 ps-1" style="background-color: darkgoldenrod; border-radius: 3px;">دوام جزئي</p>
+            <div class="col-3 col-md-2 text-center">
+                <p class="py-2 mt-3 ps-1" style="background-color: darkgoldenrod; border-radius: 3px;">{{$job->job_detail->time_type}} </p>
             </div>
         </div>
         </div><!--end shadow-->
     </div><!--end single container col12-->
+   
+    @empty
+      
+    @endforelse
 
-    <div class="col-12 parent">
+    {{-- <div class="col-12 parent">
         <div class="shadow-sm p-3 mb-5 bg-body rounded">
         <div class="row">
             <div class="col-3">
@@ -371,7 +367,7 @@
             </div>
         </div>
         </div><!--end shadow-->
-    </div><!--end single container col12-->
+    </div><!--end single container col12--> --}}
 </div> <!--end row that container relation jops-->    
 </div> <!--end row info jops col-8 -->
 
