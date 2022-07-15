@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use App\Mail\ActivateEmail;
+
 use App\Models\User;
+use App\Models\company;
 
 class AuthController extends Controller
 {
@@ -21,87 +25,107 @@ class AuthController extends Controller
         
     }
     //
-    public function login()
+    public function showLogin()
     {
         return view('Authentication.login');
     }
-    public function signup()
+    public function showRegister()
     {
-        return view('Authentication.signup');
+        return view('Authentication.register');
 
     }
 
-    public function dologin(Request $request)
+    public function dologin(Request $request) 
     {
         Validator::validate($request->all(),[
-            'email_username'=>['email','required','min:3','max:50'],
-            'user_pass'=>['required','min:5']
+            'email'=>['email','required'],
+            'password'=>['required']
 
 
         ],[
-            'email_username.required'=>'this field is required',
-            'email_username.min'=>'can not be less than 3 letters', 
+            'email.required'=>'this field is required',
+           
            
         ]);
+        
 
-        if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass]))
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
         {
 
             
             if(Auth::user()->hasRole('admin'))
-            return redirect()->route('admin');
-            else 
-            return redirect()->route('profile');
-        // $u=new User();
-        // $u->name=$request->input('email_username');
-        // $u->save();
+              return redirect()->route('/admin');
+            elseif(Auth::user()->hasRole('company'))
+              return redirect()->route('dashboard_company');
+            else
+            return redirect()->route('dashboard_user');
+        
 
-        // return view('Authentication.login');
+     
         }
+        else{
+           return redirect()->back();
+        } 
     }
  
     public function register(Request $request){
 
         Validator::validate($request->all(),[
-            'full_name'=>['required','min:3','max:50'],
-            'u_email'=>['required','email','unique:users,email'],
-            'user_pass'=>['required','min:5'],
-            'confirm_pass'=>['same:user_pass']
-
-
-        ],[
-            'full_name.required'=>'this field is required',
-            'full_name.min'=>'can not be less than 3 letters', 
-            'u_email.unique'=>'there is an email in the table',
-            'u_email.required'=>'this field is required',
-            'u_email.email'=>'incorrect email format',
-            'user_pass.required'=>'password is required',
-            'user_pass.min'=>'password should not be less than 3 requister',
-            'confirm_pass.same'=>'password dont match',
+            'name'=>['required','min:3','max:50'],
+            'email'=>['required','email','unique:users,email'],
+            'password'=>['required','min:5'],
+            'comfirm_password'=>['same:password']
 
 
         ]);
+     
 
         $u=new User();
-        $u->name=$request->full_name;
-        $u->password=Hash::make($request->user_pass);
-        $u->email=$request->u_email;
-        echo $u->save();
+        $u->name=$request->name;
+        $u->password=Hash::make($request->password);
+        $token=Str::uuid();
+        $u->remember_token=$token;
+        $u->email=$request->email;
+        $email_date=["username"=>$request->name ,"activate_url"=>URL::to('/')."/verfiy_email/".$token];
+        
        
-        if($u->save()){
-            $u->attachRole($request->role);
-            echo $request->role;
-            if($request->role=='admin')
-            return redirect()->route('admin');
-            return redirect()->route('profile');
+        
+            if($request->type==1)
+            { $u->save();
+
+                $u->attachRole('company');
+                Auth::login($u);
+                $company=new company();
+                $company->user_id=$u->id;
+                $company->save();
+                Mail::to($request->email)->send(new ActivateEmail);
+                return redirect()->route('dashboard_company');
+            }
+            elseif($request->type==0)
+            {    $u->save();
+                $u->attachRole('client');
+                Auth::login($u);
+
+                return redirect()->route('dashboard_user');
+            }
+            else
+            {
+                dd('else');
+                return redirect()->back();
+            }
+
+            // $u->attachRole($request->role);
+            // echo $request->role;
+            // if($request->role=='admin')
+            // return redirect()->route('admin');
+            // return redirect()->route('profile');
 
             
            
            
-        }
-
+       
       
-        return back()->with(['error'=>'can not create user']);
+       
 
     }
 }

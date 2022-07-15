@@ -180,9 +180,9 @@
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="{{ route('about_company') }}" class="menu-link">
+            <a href="{{ route('dashboard_company') }}" class="menu-link">
                 <div data-i18n="معلومات"> </div>
-            </a>
+            </a> 
         </li>
             <li class="menu-item">
                 <a href="{{ route('securty_company') }}" class="menu-link">
@@ -191,9 +191,14 @@
             </li>
             <li class="menu-item">
                 <a href="{{ route('connection_company') }}"  class="menu-link">
-                    <div data-i18n="  معلومات الاتصال"> </div>
+                    <div data-i18n="  معلومات الاتصال"> </div> 
                 </a>
             </li>
+            <li class="menu-item">
+              <a href="{{ route('service_company') }}"  class="menu-link">
+                  <div data-i18n="   الخدمات"> </div> 
+              </a>
+          </li>
 
         </ul>
     </li>
@@ -208,7 +213,7 @@
     
     </li>
     <li class="menu-item">
-      <a href="{{route('show_qualifications')}}" class="menu-link ">
+      <a href="{{route('profile_company')}}" class="menu-link ">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="  البروفائل " > </div>
       </a>
@@ -701,7 +706,7 @@
       
 
       <!-- Content wrapper -->
-      <div class="content-wrapper">
+      <div class="content-wrapper " >
 
 <!-- Content -->
         <div class="card mb-4 ">

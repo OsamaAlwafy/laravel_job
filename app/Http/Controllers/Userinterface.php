@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use App\Models\company;
+use App\Models\job;
 use Illuminate\Http\Request;
 
 class Userinterface extends Controller
 {
     public function showIndex()
     {
+
+
         return view('index');
     }
 
@@ -17,8 +21,12 @@ class Userinterface extends Controller
     }
 
     public function showJobs()
-    {
-        return view('jops');
+    {    
+        $jobs=job::with("company.User","job_detail")->where("is_active",'=',1)->get();
+        // return response()->json($companies);
+        
+       
+        return view('jops')->with('jobs',$jobs);
     }
 
     public function showContact()
@@ -31,8 +39,11 @@ class Userinterface extends Controller
         return view('about');
     }
 
-    public function showDetails()
-    {
-        return view('details');
+    public function showDetails($id)
+    {  $job=job::with("company.User","job_detail")->where("id",'=',$id)->first();
+        // return response()->json($job);
+        return view('details')->with('job',$job);
+      
+        
     }
 }

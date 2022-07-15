@@ -5,6 +5,7 @@ namespace App\Http\Controllers\userProfile;
 use App\Http\Controllers\Controller;
 use App\Models\qualification as modelQualification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -12,8 +13,8 @@ class qualification extends Controller
 {
     //
     public function showqualification()
-    {
-      $qualification=DB::table('qualifications')->get();
+    { $id=Auth::id();
+      $qualification=DB::table('qualifications')->where("user_id",$id)->get();
         return view('userProfile.qualificationsUser')->with("qualifications",$qualification);   
     }
     public function storeQualification(Request $request)
@@ -23,7 +24,7 @@ class qualification extends Controller
       $qualification->date=$request->date;
       $qualification->describe=$request->describe;
 
-      $qualification->user_id=1;
+      $qualification->user_id=Auth::id();
      // $qualification->user_id=Auth::user()->id;
   
       $qualification->save();

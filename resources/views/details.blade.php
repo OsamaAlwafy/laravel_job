@@ -10,7 +10,7 @@
                     <div class="row g-0">
                       <div class="col-md-4">
                         <img src="assets/images/comdetail.png" class="img-fluid rounded-start" alt="...">
-                        <p class="card-text"><small class="text-muted"> يمن سوفت</small></p>
+                      <p class="card-text"><small class="text-muted">{{$job->company->user->name}}</small></p>
 
                         <p class="card-text">
                             <svg xmlns="http://www.w3.org/2000/svg" style="color: blue;" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -18,14 +18,14 @@
                                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                               </svg>     
                             
-                            <small class="text-muted"> تعز -اليمن </small>
+                            <small class="text-muted"> {{$job->company->user->city}} -{{$job->company->user->country}} </small>
                         </p>
                          
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
                           <h5 class="card-title">تفاصيل الوظيفة</h5>
-                          <p class="card-text">المسمى الوظيفي :مهندس برمجيات</p>
+                        <p class="card-text">المسمى الوظيفي :{{$job->name}}</p>
                           <p class="card-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
                                 <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
@@ -38,7 +38,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
                                 <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
                               </svg>
-                            <small class="text-muted">2000</small>
+                            <small class="text-muted">{{$job->job_detail->salary}}</small>
                         </p>
                         </div> <!--end card-body-->
                       </div> 
@@ -47,6 +47,8 @@
                   </div> <!--end card div-->
                   <div class="container">
                     <p class="text-muted">
+
+                      {{$job->job_detail->descripe}}
                       نحن نبحث عن مسوق متكامل يمكنه إتقان وسائل التواصل الاجتماعي 
                       وكتابة الإعلانات والتصوير الفوتوغرافي وتحرير الفيديو والتواصل مع المجتمع والمزيد. هل أنت رائد أعمال بطبيعتك وفاعل مع أمثلة قوية للتنفيذ؟ هل
                        أنت نشيط للغاية وبادئ ذاتي؟ إذا كانت الإجابة "نعم" ، فنحن بحاجة إليك!
@@ -55,6 +57,8 @@
                         <div class="col-12 col-lg-6">
                             <p class="h3">مسؤوليات العمل</p>
                             <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{$job->job_detail->W_responsible}}</li>
+
                               <li class="list-group-item">االخروج بأفكار SMM جديدة ومؤثرة</li>
                               <li class="list-group-item">التقاط صور جميلة لـن</li>
                               <li class="list-group-item">زالسفر لحضور الفعاليات</li>
@@ -65,6 +69,8 @@
                         <div class="col-12 col-lg-6">
                             <p class="h3">لماذا العمل معنا</p>
                             <ul class="list-group list-group-flush">
+                              <li class="list-group-item"> {{$job->job_detail->why_w_us}}</li>
+
                               <li class="list-group-item">االخروج بأفكار SMM جديدة ومؤثرة</li>
                               <li class="list-group-item">التقاط صور جميلة لـن</li>
                               <li class="list-group-item">زالسفر لحضور الفعاليات</li>
@@ -74,8 +80,8 @@
                     </div>
 
                     <div class="btn-group tm-4 " role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-primary ms-4">حفظ</button>
-                        <button type="button" class="btn btn-outline-primary ms-4">تنزيل</button>
+                    <a href="{{route('applying_job',['id'=>$job->id])}}"><button type="button" class="btn btn-outline-primary ms-4">تقديم </button></a>
+                        <button type="button" class="btn btn-outline-primary ms-4">مشاركة</button>
                         
                       </div>
                     <div class="container" style="background-color: #cad7d7;">

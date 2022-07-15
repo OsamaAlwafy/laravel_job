@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\userProfile;
 use App\Models\skill as modelSkill;
 use Illuminate\Support\Facades\DB;
-
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,15 +15,15 @@ class skill extends Controller
     $skill=new modelSkill();
     $skill->name=$request->name;
     $skill->rate=$request->rate;
-    $skill->user_id=1;
-   // $skill->user_id=Auth::user()->id;
+    $skill->user_id= Auth::id();
 
     $skill->save();
     return back();
   }
   public function showSkill()
-  {
-    $skills=DB::table('skills')->get();
+  { 
+    $id=Auth::id();
+    $skills=DB::table('skills')->where("user_id",$id)->get();
       return view('userProfile.skillUser')->with("skills",$skills);      
 
   }

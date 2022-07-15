@@ -17,17 +17,18 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            'name_com' => $this->faker->name(),
+            // 'name_com' => $this->faker->name(),
             
             
-            'logo' => "company.png",
+            // 'logo' => "company.png",
             'location' => 'Gmal Street', // password
-            "city"=>"Taiz",
+            // "city"=>"Taiz",
             "type"=>"engnerr",
             "url"=>"company.com",
-            "phone"=>"700005552",
-            "email"=>"company.com",
-            "country"=>"Yemen",
+            "user_id"=>2,
+            // "phone"=>"700005552",
+            // "email"=>"company.com",
+            // "country"=>"Yemen",
             'updated_at' => now(),
             'created_at'=>now()
         ];
