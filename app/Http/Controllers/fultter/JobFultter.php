@@ -11,7 +11,7 @@ class JobFultter extends Controller
     public function index()
     {   
         $request= request();
-        // return $request->query('name');
+       
 
         $jobs=job::with("company.User","job_detail")->where("is_active",'=',1);
         if($request->query('name'))
